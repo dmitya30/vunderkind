@@ -279,7 +279,7 @@ a {
 
 .hero__badge {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(4px);
   color: #F26522;
   font-size: 0.9375rem;
@@ -525,7 +525,7 @@ a {
 .lessons__image {
   border-radius: 16px;
   overflow: hidden;
-  max-height: 400px;
+  aspect-ratio: 16 / 9;
 }
 
 .lessons__image img {
@@ -557,6 +557,7 @@ a {
 .method__image {
   border-radius: 16px;
   overflow: hidden;
+  object-fit: cover;
 }
 
 .method__image img {
@@ -614,7 +615,9 @@ a {
 }
 
 .review-card {
+  width: calc((100% - 24px) / 2);
   min-width: calc((100% - 24px) / 2);
+  max-width: calc((100% - 24px) / 2);
   background: #F5F5F5;
   border-radius: 16px;
   padding: 32px;
@@ -629,6 +632,8 @@ a {
   line-height: 1.6;
   color: #1A1A1A;
   flex-grow: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .review-card__author {
@@ -795,7 +800,7 @@ a {
   }
 
   .method__image {
-    max-height: 360px;
+    aspect-ratio: 16 / 9;
   }
 
   .contacts__inner {
@@ -928,7 +933,9 @@ a {
 
   /* Reviews mobile */
   .review-card {
+    width: 100%;
     min-width: 100%;
+    max-width: 100%;
   }
 
   /* Footer mobile */
