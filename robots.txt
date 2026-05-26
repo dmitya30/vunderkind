@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap будет добавлен после подключения домена
+# Sitemap: https://DOMAIN/sitemap.xml
