@@ -22,6 +22,16 @@
     });
   });
 
+  // Закрытие меню при клике вне его
+  document.addEventListener('click', function (e) {
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !burger.contains(e.target)) {
+      nav.classList.remove('open');
+      burger.classList.remove('active');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+
   /* ====== REVIEWS CAROUSEL ====== */
   const track = document.getElementById('track');
   const prevBtn = document.getElementById('prevBtn');
@@ -35,8 +45,7 @@
   function getVisibleCount() {
     var w = window.innerWidth;
     if (w <= 768) return 1;
-    if (w <= 1024) return 2;
-    return 3;
+    return 2;
   }
 
   function getGap() {
