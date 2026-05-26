@@ -96,7 +96,7 @@ a {
 
 .btn--outline {
   background: transparent;
-  color: #F26522;
+  color: #C2410C;
   border: 2px solid #F26522;
 }
 
@@ -142,6 +142,10 @@ a {
 .messenger-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px;
 }
 
 /* ====== HEADER ====== */
@@ -182,6 +186,10 @@ a {
   color: #1A1A1A;
   transition: color 0.2s;
   white-space: nowrap;
+  padding: 8px 4px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .header__link:hover {
@@ -358,7 +366,7 @@ a {
 
 .result-card__text {
   font-size: 0.9375rem;
-  color: #6B7280;
+  color: #4B5563;
   line-height: 1.5;
 }
 
@@ -425,20 +433,20 @@ a {
   flex-direction: column;
   gap: 4px;
   font-size: 0.8125rem;
-  color: #6B7280;
+  color: #4B5563;
   padding-left: 12px;
   border-left: 3px solid #F26522;
 }
 
 .program-card__desc {
   font-size: 0.9375rem;
-  color: #6B7280;
+  color: #4B5563;
   line-height: 1.5;
 }
 
 .program-card__meta {
   font-size: 0.8125rem;
-  color: #6B7280;
+  color: #4B5563;
 }
 
 .program-card__price {
@@ -479,7 +487,7 @@ a {
 .intensive-block__text,
 .mental-block__text {
   font-size: 0.9375rem;
-  color: #6B7280;
+  color: #4B5563;
   flex: 1;
   min-width: 280px;
 }
@@ -519,7 +527,7 @@ a {
 
 .lesson-card__text {
   font-size: 0.9375rem;
-  color: #6B7280;
+  color: #4B5563;
 }
 
 .lessons__image {
@@ -546,7 +554,7 @@ a {
 .method__text p {
   margin-bottom: 16px;
   font-size: 0.9375rem;
-  color: #6B7280;
+  color: #4B5563;
   line-height: 1.7;
 }
 
@@ -690,7 +698,7 @@ a {
 
 .contacts__hours {
   font-size: 0.9375rem;
-  color: #6B7280;
+  color: #4B5563;
 }
 
 .contacts__phone {
@@ -730,7 +738,7 @@ a {
 
 .footer__copy {
   font-size: 0.8125rem;
-  color: #6B7280;
+  color: #4B5563;
 }
 
 .footer__messengers {
