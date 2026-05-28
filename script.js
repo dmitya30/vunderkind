@@ -132,22 +132,18 @@
   // Initial position
   updateCarousel();
 
-  /* ====== CERTIFICATE MODAL ====== */
-  var modal = document.getElementById('certModal');
-  var modalImg = document.getElementById('modalImg');
-  var modalClose = document.getElementById('modalClose');
-  var modalOverlay = document.getElementById('modalOverlay');
-  var certThumbs = document.querySelectorAll('[data-cert]');
+  // === IMAGE MODAL (certificates + gallery) ===
+  const modal = document.getElementById('certModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalClose = document.getElementById('modalClose');
+  const modalOverlay = document.getElementById('modalOverlay');
 
-  certThumbs.forEach(function (thumb) {
-    thumb.addEventListener('click', function (e) {
-      e.preventDefault();
-      var src = this.getAttribute('href');
-      modalImg.src = src;
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
+  function openModal(src, alt) {
+    modalImg.src = src;
+    modalImg.alt = alt || 'Изображение';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 
   function closeModal() {
     modal.classList.remove('active');
@@ -155,13 +151,26 @@
     modalImg.src = '';
   }
 
+  // Certificates
+  document.querySelectorAll('[data-cert]').forEach(thumb => {
+    thumb.addEventListener('click', e => {
+      e.preventDefault();
+      openModal(thumb.href, thumb.querySelector('img')?.alt);
+    });
+  });
+
+  // Gallery
+  document.querySelectorAll('[data-gallery]').forEach(item => {
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      openModal(item.href, item.querySelector('img')?.alt);
+    });
+  });
+
   modalClose.addEventListener('click', closeModal);
   modalOverlay.addEventListener('click', closeModal);
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closeModal();
-    }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
   });
 
   /* ====== HEADER SHADOW ON SCROLL ====== */
