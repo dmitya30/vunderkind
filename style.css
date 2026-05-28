@@ -588,7 +588,7 @@ details[open] .program-card__summary::after {
 /* ====== LESSONS ====== */
 .lessons__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 32px;
   margin-bottom: 48px;
 }
@@ -1045,7 +1045,7 @@ details[open] .program-card__summary::after {
   }
 
   .audience__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   /* Results mobile */
@@ -1065,7 +1065,7 @@ details[open] .program-card__summary::after {
 
   /* Lessons mobile */
   .lessons__grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
 
