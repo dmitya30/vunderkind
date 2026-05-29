@@ -520,26 +520,45 @@ a {
 .program-card__summary {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #F26522;
+  color: #C2410C;
   cursor: pointer;
   list-style: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #FFF3ED;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.program-card__summary:hover {
+  background: #FFE4D4;
 }
 
 .program-card__summary::-webkit-details-marker {
   display: none;
 }
 
-.program-card__summary::after {
-  content: '▸';
+.program-card__summary::before {
+  content: '+';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #F26522;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
   transition: transform 0.2s;
-  font-size: 0.75rem;
 }
 
-details[open] .program-card__summary::after {
-  transform: rotate(90deg);
+details[open] .program-card__summary::before {
+  content: '−';
 }
 
 .program-card__list {
@@ -755,6 +774,7 @@ details[open] .program-card__summary::after {
   display: flex;
   transition: transform 0.4s ease;
   gap: 24px;
+  align-items: flex-start;
 }
 
 .review-card {
@@ -774,7 +794,6 @@ details[open] .program-card__summary::after {
   font-size: 0.9375rem;
   line-height: 1.6;
   color: #1A1A1A;
-  flex-grow: 1;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
