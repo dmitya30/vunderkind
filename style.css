@@ -644,6 +644,18 @@ details[open] .program-card__summary::after {
   margin-bottom: 48px;
 }
 
+  .method__logo {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .method__logo-img {
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
 .method__text p {
   margin-bottom: 16px;
   font-size: 0.9375rem;
@@ -960,18 +972,6 @@ details[open] .program-card__summary::after {
   .section__title {
     font-size: 1.625rem;
     margin-bottom: 32px;
-  }
-
-  .method__logo {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  .method__logo-img {
-    max-width: 480px;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
   }
 
   /* Header mobile */
