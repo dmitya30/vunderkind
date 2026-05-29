@@ -62,7 +62,7 @@ a {
 /* ====== BUTTONS ====== */
 .btn {
   display: inline-block;
-  background: #F26522;
+  background: #E05A1B;
   color: #FFFFFF;
   font-family: inherit;
   font-size: 1rem;
@@ -77,7 +77,7 @@ a {
 }
 
 .btn:hover {
-  background: #D4551A;
+  background: #C2410C;
 }
 
 .btn:active {
@@ -97,11 +97,11 @@ a {
 .btn--outline {
   background: transparent;
   color: #C2410C;
-  border: 2px solid #F26522;
+  border: 2px solid #E05A1B;
 }
 
 .btn--outline:hover {
-  background: #F26522;
+  background: #C2410C;
   color: #FFFFFF;
 }
 
@@ -801,7 +801,7 @@ details[open] .program-card__summary::before {
 .review-card__author {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #F26522;
+  color: #C2410C;
 }
 
 .reviews__controls {
@@ -1091,6 +1091,11 @@ details[open] .program-card__summary::before {
   /* Certs mobile */
   .certs-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cert-thumb {
+    min-height: 44px;
+    padding: 4px;
   }
 
   .gallery__grid {
