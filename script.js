@@ -39,97 +39,50 @@
   const cards = track.querySelectorAll('.review-card');
   const totalCards = cards.length;
   let currentIndex = 0;
-  let autoplayTimer = null;
-  let visibleCount = getVisibleCount();
-
-  function getVisibleCount() {
-    var w = window.innerWidth;
-    if (w <= 768) return 1;
-    return 2;
-  }
-
-  function getGap() {
-    return 24;
-  }
 
   function updateCarousel() {
-    var gap = getGap();
-    var cardWidth = (track.parentElement.offsetWidth - gap * (visibleCount - 1)) / visibleCount;
+    var gap = 24;
+    var cardWidth = track.parentElement.offsetWidth;
     var offset = currentIndex * (cardWidth + gap);
     track.style.transform = 'translateX(-' + offset + 'px)';
   }
 
   function goNext() {
-    var maxIndex = totalCards - visibleCount;
-    if (maxIndex < 0) maxIndex = 0;
-    currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+    currentIndex = currentIndex >= totalCards - 1 ? 0 : currentIndex + 1;
     updateCarousel();
   }
 
   function goPrev() {
-    var maxIndex = totalCards - visibleCount;
-    if (maxIndex < 0) maxIndex = 0;
-    currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+    currentIndex = currentIndex <= 0 ? totalCards - 1 : currentIndex - 1;
     updateCarousel();
   }
 
-  nextBtn.addEventListener('click', function () {
-    goNext();
-    resetAutoplay();
-  });
-
-  prevBtn.addEventListener('click', function () {
-    goPrev();
-    resetAutoplay();
-  });
-
-  // Autoplay
-  function startAutoplay() {
-    autoplayTimer = setInterval(goNext, 5000);
-  }
-
-  function resetAutoplay() {
-    clearInterval(autoplayTimer);
-    startAutoplay();
-  }
-
-  startAutoplay();
+  nextBtn.addEventListener('click', goNext);
+  prevBtn.addEventListener('click', goPrev);
 
   // Recalc on resize
   var resizeTimeout;
   window.addEventListener('resize', function () {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(function () {
-      visibleCount = getVisibleCount();
-      var maxIndex = totalCards - visibleCount;
-      if (maxIndex < 0) maxIndex = 0;
-      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      if (currentIndex >= totalCards) currentIndex = totalCards - 1;
       updateCarousel();
     }, 150);
   });
 
   // Swipe support
   var touchStartX = 0;
-  var touchEndX = 0;
-
   track.addEventListener('touchstart', function (e) {
     touchStartX = e.changedTouches[0].screenX;
   }, { passive: true });
 
   track.addEventListener('touchend', function (e) {
-    touchEndX = e.changedTouches[0].screenX;
-    var diff = touchStartX - touchEndX;
+    var diff = touchStartX - e.changedTouches[0].screenX;
     if (Math.abs(diff) > 50) {
-      if (diff > 0) {
-        goNext();
-      } else {
-        goPrev();
-      }
-      resetAutoplay();
+      if (diff > 0) goNext(); else goPrev();
     }
   }, { passive: true });
 
-  // Initial position
   updateCarousel();
 
   // === IMAGE MODAL (certificates + gallery) ===

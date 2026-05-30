@@ -282,7 +282,9 @@ a {
   position: relative;
   z-index: 1;
   max-width: 720px;
+  margin: 0 auto;
   padding: 60px 0;
+  text-align: center;
 }
 
 .hero__title {
@@ -317,7 +319,7 @@ a {
 .cta-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
 }
 
@@ -766,6 +768,7 @@ details[open] .program-card__summary::before {
 
 /* ====== REVIEWS ====== */
 .reviews__carousel {
+  position: relative;
   overflow: hidden;
   margin-bottom: 24px;
 }
@@ -778,12 +781,12 @@ details[open] .program-card__summary::before {
 }
 
 .review-card {
-  width: calc((100% - 24px) / 2);
-  min-width: calc((100% - 24px) / 2);
-  max-width: calc((100% - 24px) / 2);
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
   background: #F5F5F5;
   border-radius: 16px;
-  padding: 32px;
+  padding: 40px 72px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -804,30 +807,36 @@ details[open] .program-card__summary::before {
   color: #C2410C;
 }
 
-.reviews__controls {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-}
-
 .reviews__arrow {
-  width: 48px;
-  height: 48px;
+  position: absolute;
+  top: 48px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #F5F5F5;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
   color: #1A1A1A;
   transition: background 0.2s, color 0.2s;
+  z-index: 2;
 }
 
 .reviews__arrow:hover {
   background: #F26522;
   color: #FFFFFF;
   border-color: #F26522;
+}
+
+.reviews__arrow--prev {
+  left: 12px;
+}
+
+.reviews__arrow--next {
+  right: 12px;
 }
 
 /* ====== CONTACTS ====== */
@@ -976,10 +985,6 @@ details[open] .program-card__summary::before {
   .gallery__grid {
     grid-template-columns: repeat(3, 1fr);
   }
-
-  .review-card {
-    min-width: calc((100% - 24px) / 2);
-  }
 }
 
 /* Mobile */
@@ -1107,6 +1112,21 @@ details[open] .program-card__summary::before {
     width: 100%;
     min-width: 100%;
     max-width: 100%;
+    padding: 24px 16px;
+  }
+
+  .reviews__arrow {
+    top: 32px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .reviews__arrow--prev {
+    left: 4px;
+  }
+
+  .reviews__arrow--next {
+    right: 4px;
   }
 
   /* Footer mobile */
