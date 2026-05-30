@@ -119,6 +119,7 @@
     });
   });
 
+
   // Gallery
   document.querySelectorAll('[data-gallery]').forEach(item => {
     item.addEventListener('click', e => {
