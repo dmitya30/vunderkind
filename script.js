@@ -44,14 +44,20 @@
 
   function updateCarousel() {
     var gap = 24;
-    var cardWidth = track.parentElement.offsetWidth;
-    var offset = currentIndex * (cardWidth + gap);
+    var containerWidth = track.parentElement.offsetWidth;
+    var offset = currentIndex * (containerWidth + gap);
     track.style.transform = 'translateX(-' + offset + 'px)';
 
     // Обновляем индикатор
     var percent = ((currentIndex + 1) / totalCards) * 100;
     progressFill.style.width = percent + '%';
     reviewCounter.textContent = (currentIndex + 1) + ' / ' + totalCards;
+
+    // Адаптируем высоту трека под текущую карточку
+    var currentCard = cards[currentIndex];
+    if (currentCard) {
+      track.style.height = currentCard.offsetHeight + 'px';
+    }
   }
 
   function goNext() {
@@ -91,6 +97,13 @@
   }, { passive: true });
 
   updateCarousel();
+
+  // Пересчитать высоту после загрузки шрифтов
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () {
+      updateCarousel();
+    });
+  }
 
   // === IMAGE MODAL (certificates + gallery) ===
   const modal = document.getElementById('certModal');
