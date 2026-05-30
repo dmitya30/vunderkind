@@ -458,9 +458,24 @@
   <div class="container">
     <h2 class="section__title">Отзывы родителей</h2>
     <div class="reviews__carousel" id="carousel">
-      <button class="reviews__arrow reviews__arrow--prev" id="prevBtn" aria-label="Предыдущий отзыв">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
+
+      <!-- Навигационная панель -->
+      <div class="reviews__nav">
+        <button class="reviews__arrow reviews__arrow--prev" id="prevBtn" aria-label="Предыдущий отзыв">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="reviews__indicator">
+          <div class="reviews__progress">
+            <div class="reviews__progress-fill" id="progressFill"></div>
+          </div>
+          <span class="reviews__counter" id="reviewCounter">1 / 22</span>
+        </div>
+        <button class="reviews__arrow reviews__arrow--next" id="nextBtn" aria-label="Следующий отзыв">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <!-- Трек отзывов -->
       <div class="reviews__track" id="track">
 
         <div class="review-card">
@@ -574,11 +589,6 @@
         </div>
 
       </div>
-
-      <button class="reviews__arrow reviews__arrow--next" id="nextBtn" aria-label="Следующий отзыв">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-
     </div>
   </div>
 </section>

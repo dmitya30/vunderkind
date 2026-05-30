@@ -33,18 +33,25 @@
   });
 
   /* ====== REVIEWS CAROUSEL ====== */
-  const track = document.getElementById('track');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const cards = track.querySelectorAll('.review-card');
-  const totalCards = cards.length;
-  let currentIndex = 0;
+  var track = document.getElementById('track');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var progressFill = document.getElementById('progressFill');
+  var reviewCounter = document.getElementById('reviewCounter');
+  var cards = track.querySelectorAll('.review-card');
+  var totalCards = cards.length;
+  var currentIndex = 0;
 
   function updateCarousel() {
     var gap = 24;
     var cardWidth = track.parentElement.offsetWidth;
     var offset = currentIndex * (cardWidth + gap);
     track.style.transform = 'translateX(-' + offset + 'px)';
+
+    // Обновляем индикатор
+    var percent = ((currentIndex + 1) / totalCards) * 100;
+    progressFill.style.width = percent + '%';
+    reviewCounter.textContent = (currentIndex + 1) + ' / ' + totalCards;
   }
 
   function goNext() {
