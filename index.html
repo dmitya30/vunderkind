@@ -79,7 +79,7 @@
         <a class="messenger-link" href="https://t.me/supermozg_pro"><img src="assets/icons/telegram.svg" alt="Telegram" class="messenger-icon"></a>
         <a class="messenger-link" href="https://vk.com/supermozgspb"><img src="assets/icons/vk.svg" alt="VK" class="messenger-icon"></a>
       </div>
-      <a href="tel:+79937087008" class="btn btn--small header__cta">Записаться</a>
+      <a href="#" class="btn btn--small header__cta" data-cta>Записаться</a>
       <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -96,7 +96,7 @@
     <h1 class="hero__title">Школа скорочтения и&nbsp;развития памяти для&nbsp;детей и&nbsp;взрослых</h1>
     <p class="hero__subtitle">Программы по&nbsp;развитию памяти, внимания, эффективного чтения на&nbsp;основе запатентованной системы интеллектуального развития и&nbsp;уникальных методик д.п.н.&nbsp;Васильевой&nbsp;Л.Л.</p>
     <div class="cta-block">
-      <a href="tel:+79937087008" class="btn btn--large btn--twoline">Записаться на вводное занятие<span class="btn__sub">Бесплатно</span></a>
+    <a href="#" class="btn btn--large btn--twoline" data-cta>Записаться на вводное занятие<span class="btn__sub">Бесплатно</span></a>
       <p class="cta-block__phone">Или позвоните: <a href="tel:+79937087008" class="link">+7 993 708-70-08</a></p>
       <p class="cta-block__messengers">
         Или напишите:
@@ -278,7 +278,7 @@
             <span>· 96 занятий по 60–90 мин.<br>· 2–3 раза в неделю</span>
           </div>
           <div class="program-card__price">от 1 500 ₽/занятие · от 12 000 ₽/мес.</div>
-          <a href="tel:+79937087008" class="btn btn--outline">Записаться на курс</a>
+          <a href="#" class="btn btn--outline" data-cta>Записаться на курс</a>
         </div>
       </div>
 
@@ -305,7 +305,7 @@
             <span>· 72 занятия по 60 мин.<br>· 2–3 раза в неделю</span>
           </div>
           <div class="program-card__price">от 1 500 ₽/занятие · от 12 000 ₽/мес.</div>
-          <a href="tel:+79937087008" class="btn btn--outline">Записаться на курс</a>
+          <a href="#" class="btn btn--outline" data-cta>Записаться на курс</a>
         </div>
       </div>
 
@@ -331,7 +331,7 @@
             <span>· 72 занятия по 90 мин.<br>· 2–3 раза в неделю</span>
           </div>
           <div class="program-card__price">от 1 500 ₽/занятие · от 12 000 ₽/мес.</div>
-          <a href="tel:+79937087008" class="btn btn--outline">Записаться на курс</a>
+          <a href="#" class="btn btn--outline" data-cta>Записаться на курс</a>
         </div>
       </div>
 
@@ -342,7 +342,7 @@
       <div class="intensive-block">
         <h3 class="intensive-block__title">Летний интенсив</h3>
         <p class="intensive-block__text">Используйте свободное время для&nbsp;укрепления интеллектуального потенциала. Летние программы для&nbsp;детей и&nbsp;взрослых.</p>
-        <a href="tel:+79937087008" class="btn btn--outline">Записаться на интенсив</a>
+        <a href="#" class="btn btn--outline" data-cta>Записаться на интенсив</a>
       </div>
     </div>
 
@@ -448,7 +448,7 @@
     </div>
 
     <div class="method__cta">
-      <a href="tel:+79937087008" class="btn">Записаться на вводное занятие</a>
+      <a href="#" class="btn" data-cta>Записаться на вводное занятие</a>
     </div>
   </div>
 </section>
@@ -608,7 +608,7 @@
           <a class="messenger-link" href="https://t.me/supermozg_pro"><img src="assets/icons/telegram.svg" alt="Telegram" class="messenger-icon messenger-icon--large"></a>
           <a class="messenger-link" href="https://vk.com/supermozgspb"><img src="assets/icons/vk.svg" alt="VK" class="messenger-icon messenger-icon--large"></a>
         </div>
-        <a href="tel:+79937087008" class="btn">Записаться на вводное занятие</a>
+        <a href="#" class="btn" data-cta>Записаться на вводное занятие</a>
       </div>
       <div class="contacts__map">
         <iframe src="https://yandex.ru/map-widget/v1/?oid=1196839593&ol=biz&z=16" title="Школа скорочтения на карте — ул. Торжковская, 5, Санкт-Петербург" width="100%" height="400" frameborder="0" allowfullscreen loading="lazy"></iframe>
@@ -636,6 +636,24 @@
   <div class="modal__content">
     <button class="modal__close" id="modalClose" aria-label="Закрыть">&times;</button>
     <img src="" alt="Сертификат" class="modal__img" id="modalImg">
+  </div>
+</div>
+
+<!-- Модалка CTA -->
+<div class="modal modal--cta" id="ctaModal">
+  <div class="modal__overlay" id="ctaOverlay"></div>
+  <div class="modal__content modal__content--cta">
+    <button class="modal__close" id="ctaClose" aria-label="Закрыть">&times;</button>
+    <h3 class="cta-modal__title">Записаться на занятие</h3>
+    <p class="cta-modal__label">Звоните:</p>
+    <a href="tel:+79937087008" class="btn btn--large cta-modal__phone">+7 993 708-70-08</a>
+    <p class="cta-modal__label">Пишите:</p>
+    <div class="cta-modal__messengers">
+      <a class="messenger-link" href="https://max.ru/u/f9LHodD0cOJJLF7z0wWGKpPxU0MK9I8PAFApwkT77aOeeDlJWn-nUu6EeS0"><img src="assets/icons/max.svg" alt="Max" class="messenger-icon messenger-icon--large"></a>
+      <a class="messenger-link" href="https://t.me/supermozg_pro"><img src="assets/icons/telegram.svg" alt="Telegram" class="messenger-icon messenger-icon--large"></a>
+      <a class="messenger-link" href="https://vk.com/supermozgspb"><img src="assets/icons/vk.svg" alt="VK" class="messenger-icon messenger-icon--large"></a>
+    </div>
+    <p class="cta-modal__hours">Ежедневно, 10:00–21:00</p>
   </div>
 </div>
 

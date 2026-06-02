@@ -159,4 +159,32 @@
     }
   }, { passive: true });
 
+  /* ====== CTA MODAL ====== */
+  var ctaModal = document.getElementById('ctaModal');
+  var ctaClose = document.getElementById('ctaClose');
+  var ctaOverlay = document.getElementById('ctaOverlay');
+
+  function openCtaModal(e) {
+    e.preventDefault();
+    ctaModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCtaModal() {
+    ctaModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-cta]').forEach(function (btn) {
+    btn.addEventListener('click', openCtaModal);
+  });
+
+  ctaClose.addEventListener('click', closeCtaModal);
+  ctaOverlay.addEventListener('click', closeCtaModal);
+
+  // Escape закрывает любую активную модалку (уже есть для сертификатов, добавляем CTA)
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeCtaModal();
+  });
+
 })();
