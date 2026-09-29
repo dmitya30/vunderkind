@@ -1319,3 +1319,14 @@ details[open] .program-card__summary::before {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Online and offline format accent */
+.hero__format {
+  display: block;
+  margin-top: 6px;
+  color: #E40612;
+  font-size: 0.62em;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
