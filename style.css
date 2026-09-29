@@ -1322,11 +1322,16 @@ details[open] .program-card__summary::before {
 
 /* Online and offline format accent */
 .hero__format {
-  display: block;
-  margin-top: 6px;
-  color: #E40612;
-  font-size: 0.62em;
+  display: table;
+  max-width: 100%;
+  margin: 8px auto 0;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #E05A1B;
+  font-size: clamp(0.875rem, 1.7vw, 1.125rem);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: 0.01em;
+  white-space: nowrap;
 }
